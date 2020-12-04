@@ -1,6 +1,6 @@
 body
 {
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
 }
@@ -56,38 +56,65 @@ p,button
     background-color: red;
 }
 
-.add-info-container
+#add-info-container
 {
     width: 100%;
     height: fit-content;
+    background-color: rgb(233, 229, 229);
+
+
 }
 
 #add-info
 {
-    margin: auto;
     width: fit-content;
+    margin: 1rem auto;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
 }
-
 #type
 {
-    width: fit-content;
-    height: fit-content;
-    margin: auto;
     font-size: 1.5rem;
+    padding: .5rem 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 10%;
+    outline: none;
+    cursor: pointer;
+    margin-right: .5rem;
+}
+#add-info button :focus
+{
+    outline: none;
+}
+#type img
+{
+    width: auto;
+    height: 1rem;
+    margin: auto;
+    margin-left: 1rem;
 }
 
 #add-info input
 {
     font-size: 1.5rem;
-    margin: auto;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    margin-right: .5rem;
+    border-radius: 2%;
+}
+#add-info input :focus
+{
+    outline: none;
 }
 
 #add
 {
-    padding: 5px;
+    padding: 10px;
     margin-left: 2rem;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
     outline: none;
@@ -101,14 +128,16 @@ p,button
     width: 2rem;
     height: auto;
 }
+
 #detail-info
 {
     width: 70%;
     margin: auto;
-
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
 }
 #income,#expenses
 {
@@ -117,21 +146,20 @@ p,button
     width: 100%;
     margin-right: 30px;
     padding: 10px;
-    border: 2px solid orange;
 }
 #income p
 {
     font-size: 30px;
     color: green;
-    margin-bottom: 20px;
-    border-bottom: 1px solid black;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid  rgb(177, 162, 162);
 }
 #expenses p 
 {
     font-size: 30px;
     color: red;
-    margin-bottom: 20px;
-    border-bottom: 1px solid black;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgb(177, 162, 162);
 }
 
 .detail-list
@@ -144,8 +172,8 @@ p,button
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid black;
+    padding: .6rem 1rem;
+    border-bottom: 1px solid  rgb(177, 162, 162);
     transition: .5s;
 }
 .detail-item:hover
@@ -157,17 +185,28 @@ p,button
 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
-#income-del-1
+#inc-del-1
 {
     margin-left: 5px;
-    font-size: 20px;
-    background-color: red;
-    color: white;
-
+    font-size: .8rem;
+    font-weight: bold;
+    padding: .3rem;
+    border-radius: 50%;
+    cursor: pointer;
     display: none;
+    outline: none;
+    color: red;
+    border: 2px solid red;
+
 }
-.detail-item:hover #income-del-1
+#inc-del-1 :focus
+{
+    outline: none;
+}
+
+.detail-item:hover #inc-del-1
 {
     display: inline;
 }
