@@ -1,0 +1,173 @@
+body
+{
+    background-color: pink;
+    margin: 0;
+    padding: 0;
+}
+p,button
+{
+    margin: 0;
+    padding: 0;
+}
+.normal-p
+{
+    font-size: 2rem;
+}
+.header
+{
+    width: 100%;
+    background-image: url("https://media.nomadicmatt.com/vietnamguide.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-bottom: 10px;
+}
+
+#brief-info
+{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px 0;
+    width: fit-content;
+}
+#brief-info p
+{
+    margin: 5px auto;
+}
+#budget
+{
+    font-size: 4rem;
+}
+.in-brief,.exp-brief
+{
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.in-brief
+{
+    background-color: green;
+}
+.exp-brief
+{
+    background-color: red;
+}
+
+.add-info-container
+{
+    width: 100%;
+    height: fit-content;
+}
+
+#add-info
+{
+    margin: auto;
+    width: fit-content;
+}
+
+#type
+{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+#add-info input
+{
+    font-size: 1.5rem;
+    margin: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#add
+{
+    padding: 5px;
+    margin-left: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+#add :focus
+{
+    outline: none;
+}
+#add img
+{
+    width: 2rem;
+    height: auto;
+}
+#detail-info
+{
+    width: 70%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#income,#expenses
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 30px;
+    padding: 10px;
+    border: 2px solid orange;
+}
+#income p
+{
+    font-size: 30px;
+    color: green;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+#expenses p 
+{
+    font-size: 30px;
+    color: red;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.detail-list
+{
+    display: flex;
+    flex-direction: column;
+}
+.detail-item
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid black;
+    transition: .5s;
+}
+.detail-item:hover
+{
+    background-color: rgb(151, 138, 138);
+}
+
+.right-detail
+{
+    display: flex;
+    flex-direction: row;
+}
+#income-del-1
+{
+    margin-left: 5px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+
+    display: none;
+}
+.detail-item:hover #income-del-1
+{
+    display: inline;
+}
