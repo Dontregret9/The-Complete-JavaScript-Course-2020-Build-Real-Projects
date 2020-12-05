@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Budget</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -26,31 +27,46 @@
 
     <div id="add-info-container">
         <div id="add-info">
-            <button id="type"><span>-</span><img src="https://www.flaticon.com/svg/static/icons/svg/37/37808.svg"/></button>
+            <button id="type"><span>-</span><img src="https://www.flaticon.com/svg/static/icons/svg/37/37808.svg" alt="Choose type image"/></button>
+            <div class="choose-type">
+                <button class="choose checked">
+                    <i class="fa fa-check"></i>
+                    <span>Income</span>
+                </button>
+                <button class="choose">
+                    <i class="fa fa-check"></i>
+                    <span>Expense</span>
+                </button>
+            </div>
             <input id="description-input" type="text" placeholder="Add description">
             <input id="value-input" type="text" placeholder="Value">
-            <button id="add"><img src="https://lh3.googleusercontent.com/proxy/8sfZOAGgcpRthgOKXa_TAhpsd8Lm70GGUhKd4qGps3vW8kD_o-aJtEc0Wm9ci5h1eKA9OOHSni3KXkwA_WlGOKdgX7RI490OVwE931bc8PGT6TbBR8OBieDxVlU9CsH9vNCq9I-xmYKuprrDDyo"/></button>
+            <button id="add"><img src="https://w7.pngwing.com/pngs/232/111/png-transparent-check-mark-computer-icons-blue-red-checkmark-angle-text-rectangle.png" alt="Add new item"/></button>
         </div>
     </div>
 
     <div id="detail-info">
         <div id=income>
-            <p class="normal-p">INCOME</p>
+            <p class="normal-p green">INCOME</p>
             <div class="detail-list" id="income-list">
                 <div class="detail-item" id="inc">
                     <span class="description normal-p">le duc hoa</span>
-                    <div class="right-detai">
-                        <span class="amount normal-p">99999</span>
-                        <button id="inc-del-1">X</button>
+                    <div class="right-detail">
+                        <span class="amount normal-p green">99999</span>
+                        <button class="del-btn" id="inc-del-1">X</button>
                     </div>
                 </div>
-
             </div>
         </div>
         <div id=expenses>
-            <p class="normal-p">EXPENSES</p>
+            <p class="normal-p red">EXPENSES</p>
             <div class="detail-list" id="expense-list">
-                
+                <div class="detail-item" id="exp">
+                    <span class="description normal-p">le duc hoa</span>
+                    <div class="right-detail">
+                        <span class="amount normal-p red">99999</span>
+                        <button class="del-btn" id="exp-del-1">X</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

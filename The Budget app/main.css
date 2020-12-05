@@ -1,3 +1,7 @@
+*
+{
+    user-select: none;
+}
 body
 {
     background-color: rgb(255, 255, 255);
@@ -12,6 +16,14 @@ p,button
 .normal-p
 {
     font-size: 2rem;
+}
+.green
+{
+    color: green;
+}
+.red
+{
+    color: red;
 }
 .header
 {
@@ -72,6 +84,7 @@ p,button
     padding: 1.5rem 0;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 #type
 {
@@ -88,6 +101,44 @@ p,button
 {
     outline: none;
 }
+
+.choose-type
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -1.5rem;
+    top: 1.7rem;
+    display: none;
+}
+.choose-type i
+{
+    margin-right: .5rem;
+    opacity: 0;
+}
+.checked .fa
+{
+    opacity: 1;
+}
+.choose
+{
+    padding: 1rem .5rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+
+}
+
+.choose:hover
+{
+    background-color: blue;
+}
+
+.choose:focus
+{
+    outline: none;
+}
+
 #type img
 {
     width: auto;
@@ -150,14 +201,12 @@ p,button
 #income p
 {
     font-size: 30px;
-    color: green;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid  rgb(177, 162, 162);
 }
 #expenses p 
 {
     font-size: 30px;
-    color: red;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid rgb(177, 162, 162);
 }
@@ -186,11 +235,16 @@ p,button
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
 }
-#inc-del-1
+
+.del-btn
 {
-    margin-left: 5px;
-    font-size: .8rem;
+    margin: auto;
+    margin-left: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     padding: .3rem;
     border-radius: 50%;
@@ -199,14 +253,18 @@ p,button
     outline: none;
     color: red;
     border: 2px solid red;
-
 }
+
 #inc-del-1 :focus
 {
     outline: none;
 }
 
 .detail-item:hover #inc-del-1
+{
+    display: inline;
+}
+.detail-item:hover #exp-del-1
 {
     display: inline;
 }
