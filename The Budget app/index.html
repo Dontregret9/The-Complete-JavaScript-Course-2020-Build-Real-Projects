@@ -13,7 +13,7 @@
     <div class="header">
         <div id="brief-info">
             <p class="normal-p">Available Budget in September:</p>
-            <p id="budget">00000</p>
+            <p id="budget">0</p>
             <div class="in-brief">
                 <span class="normal-p">Income</span>
                 <span class="normal-p" id="inc-amount">0</span>
@@ -27,13 +27,13 @@
 
     <div id="add-info-container">
         <div id="add-info">
-            <button id="type"><span>-</span><img src="https://www.flaticon.com/svg/static/icons/svg/37/37808.svg" alt="Choose type image"/></button>
+            <button id="type">inc<img src="https://www.flaticon.com/svg/static/icons/svg/37/37808.svg" alt="Choose type image"/></button>
             <div class="choose-type">
-                <button class="choose checked">
+                <button class="choose" id = "choose-inc">
                     <i class="fa fa-check"></i>
                     <span>Income</span>
                 </button>
-                <button class="choose">
+                <button class="choose" id = "choose-exp">
                     <i class="fa fa-check"></i>
                     <span>Expense</span>
                 </button>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-    <script src="./money2.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
