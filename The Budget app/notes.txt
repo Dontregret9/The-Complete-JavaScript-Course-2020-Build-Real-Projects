@@ -1,0 +1,32 @@
+- if margin: auto not working  --> check height/width of this element. May be, it's width 100%
+
+- auto is not value for padding property
+
+- cssSelector:hover{} --- vs --- cssSelector :hover{}
+   (1)                        (2)
+if there are more than 2 child of(cssSelector), background-color will affect on all cssSelector, 
+on the other hand, (2) affect on them independently. 
+
+- From now, in HTML/CSS code, everything is "" by default. And in JS code, I use '' by default
+
+- innerHTML: return HTML codes (insite current element), includes element nodes and text nodes
+- outerHTML = tagName + innerHTML
+- textContent: return a string that contains all content of text node (insite current element)
+- value: return content of input tag
+--->  Apply when set content for element (abc.textContent = ,...): innerHTML/outerHTML run string as HTML code, textContent
+run string as string. When set 4 of them, all tag inside current tag will delete. 
+Just "value" attribute is still remain. (But it just for <input> ?)
+---> innerHTML & outerHTML : are so powerful, so dangerous. The input (we pass to them) will be used as HTML code, so we can run script through them (HTML5 prevented this)
+
+---> outerHTML: Have a problem with outerHTML, not understande yet !!!
+
+- insertAdjacentHTML vs insertAdjacentElement
+      (1)                     (2)
+---> (1): insert a new HTML code to DOM. (2) insert (change position) an element that existed in DOM
+
+- parentNode.removeChild(el)
+
+- A.contains(B): is B in A ? 
+
+
+
