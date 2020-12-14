@@ -119,8 +119,9 @@ var UIController = (function (){
     return {
         // get all input attribute
         getInput: function () {
+            var typeContent = document.querySelector('#'+DOMstrings.inputType+'>span').textContent;
             return {
-                type: document.getElementById(DOMstrings.inputType).textContent,
+                type: typeContent==='-'? 'exp' : 'inc',
                 description: document.getElementById(DOMstrings.inputDescription).value,
                 value: parseFloat(document.getElementById(DOMstrings.inputValue).value)
             };
@@ -132,10 +133,10 @@ var UIController = (function (){
             if(type === 'inc'){
                 element = DOMstrings.incomeContainer;
                 // copy our item HTML code, add some weird string (%id%) to easily identify for replace latterly
-                html = '<div class="detail-item" id="inc-%id%"><span class="description">%description%</span><div class="right-detai"><span class="amount">%value%</span><input id="inc-del-1" type="button" value="X"></div></div>';
+                html = '<div class="detail-item" id="inc-%id%"><span class="description normal-p">%description%</span><div class="right-detai"><span class="amount normal-p green">%value%</span><input class="del-btn" id="inc-del-1" type="button" value="X"></div></div>';
             } else if (type === 'exp'){
                 element = DOMstrings.expenseContainer;
-                html = '<div class="detail-item" id="exp-%id%"><span class="description">%description%</span><div class="right-detai"><span class="amount">%value%</span><input id="exp-del-1" type="button" value="X"></div></div>';
+                html = '<div class="detail-item" id="exp-%id%"><span class="description normal-p">%description%</span><div class="right-detai"><span class="amount normal-p red">%value%</span><input class="del-btn" id="exp-del-1" type="button" value="X"></div></div>';
             }
 
             // replace the placeholder text with actual data
@@ -179,7 +180,6 @@ var UIController = (function (){
     };
 })();
 
-
 // Control all component  ---> global controller
 // input parameters are all components before
 var controller = (function (budgetCtrl, UICtrl) {
@@ -187,35 +187,40 @@ var controller = (function (budgetCtrl, UICtrl) {
     // all events will be capture in here 
     var setupEventListeners = function () {
         var DOM = UICtrl.getDOMstrings();
-        var curType = 'inc';
 
         document.getElementById(DOM.inputType).addEventListener('click', function(){
-            document.getElementsByClassName(DOM.chooseType)[0].style.display = 'flex';
+            var chooseType = document.getElementsByClassName(DOM.chooseType)[0];
+            var chooseIncType = document.getElementById(DOM.typeInc); 
+            var chooseExpType = document.getElementById(DOM.typeExp);
+            chooseType.style.display = 'flex';
 
+            var curType = '+';
             //prepare for type chosen
-            document.getElementById(DOM.typeExp).addEventListener('click',function(){
+            chooseExpType.addEventListener('click',function(){
                 document.querySelector("#"+DOM.typeExp+">i").style.opacity = 1;
                 document.querySelector("#"+DOM.typeInc+">i").style.opacity = 0;
-                curType = 'exp';
+                curType = '-';
             });
-            document.getElementById(DOM.typeInc).addEventListener('click',function(){
+            chooseIncType.addEventListener('click',function(){
                 document.querySelector("#"+DOM.typeInc+">i").style.opacity = 1; 
                 document.querySelector("#"+DOM.typeExp+">i").style.opacity = 0;
-                curType = 'inc';
+                curType = '+';
             });
 
             window.addEventListener('click',function(event){
-                if(event.target == document.getElementsByClassName(DOM.chooseType)[0])
-                {
-                    event.target.style.display = 'none';
+                var isInputType = document.getElementById(DOM.inputType).contains(event.target);
+                var isChooseType = chooseType.contains(event.target)
+
+                if(!isChooseType && !isInputType)
+                {                    
+                    chooseType.style.display = 'none';
+                    document.querySelector('#'+DOM.inputType+'>span').textContent = curType;
                 }
-                document.getElementById(DOM.inputType).value = curType;
-            })
+            });
+
         });
 
-        document.getElementById(DOM.inputBtn).addEventListener('click', function(){
-            ctrlAddItem();
-        });
+        document.getElementById(DOM.inputBtn).addEventListener('click', ctrlAddItem);
 
         document.addEventListener('keypress', function (event){
             if (event.keyCode === 13 || event.which === 13)// event.which for old browser

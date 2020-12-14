@@ -116,7 +116,7 @@ p,button
     margin-right: .5rem;
     opacity: 0;
 }
-.choose-inc .fa
+#choose-inc .fa
 {
     opacity: 1;
 }
@@ -126,7 +126,6 @@ p,button
     border: none;
     outline: none;
     font-size: 1rem;
-
 }
 
 .choose:hover
@@ -138,7 +137,10 @@ p,button
 {
     outline: none;
 }
-
+#type
+{
+    width: 6rem;
+}
 #type img
 {
     width: auto;
